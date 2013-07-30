@@ -1,20 +1,22 @@
-
 /**
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , http = require('http')
-  , path = require('path');
+ var express = require("express"),
+ 	path = require('path'),
+ 	engine = require('ejs-locals');
 
-var app = express();
+ var app = express();
 
 // mongoose setup
-//require( './db' );
+require( './db' );
 
-// all environments
+var routes = require( './routes' );
+
+// use ejs-locals for all ejs templates
+app.engine('ejs', engine);
+
+// Configuration for all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -31,9 +33,13 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+// Routes
+app.get( '/', routes.index );
+app.post( '/create', routes.create );
+app.get( '/destroy/:id', routes.destroy );
+app.get( '/edit/:id', routes.edit );
+app.post( '/update/:id', routes.update );
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+app.listen( 3000, '127.0.0.1', function (){
+	console.log( 'Express server listening' );
 });
