@@ -1,0 +1,20 @@
+{
+  "name": "bootstrap3-example",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnaudbenard/bootstrap3-example.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "gitHead": "f89ce899f29fc0f6d684ce2be54031be744f7af3",
+  "bugs": {
+    "url": "https://github.com/arnaudbenard/bootstrap3-example/issues"
+  }
+}
