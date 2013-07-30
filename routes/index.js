@@ -23,6 +23,7 @@ exports.create = function ( req, res, next ){
   new Quote({
       user_id    : req.cookies.user_id,
       content    : req.body.content,
+      author      : req.body.author,
       updated_at : Date.now()
   }).save( function ( err, quote, count ){
     if( err ) return next( err );

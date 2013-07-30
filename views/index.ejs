@@ -3,13 +3,14 @@
 <h1 id="page-title"><%= title %></h1>
 <div id="list">
   <form action="/create" method="post" accept-charset="utf-8">
-    <div class="item-new">
       <input class="input" type="text" name="content" />
-    </div>
+      <input class="input" type="text" name="author" />
+      <input type="submit" />
   </form>
 
 <% quotes.forEach( function ( quote ){ %>
   <div class="item">
+  	<p> Author <%= quote.author%></p>
     <a class="update-link" href="/edit/<%= quote._id %>" title="Update this todo item"><%= quote.content %></a>
     <a class="del-btn" href="/destroy/<%= quote._id %>" title="Delete this todo item">Delete</a>
   </div>
