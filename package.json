@@ -1,20 +1,13 @@
 {
-  "name": "bootstrap3-example",
-  "version": "0.0.0",
-  "description": "",
-  "main": "server.js",
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/arnaudbenard/bootstrap3-example.git"
-  },
-  "author": "",
-  "license": "BSD",
-  "gitHead": "f89ce899f29fc0f6d684ce2be54031be744f7af3",
-  "bugs": {
-    "url": "https://github.com/arnaudbenard/bootstrap3-example/issues"
+  "dependencies": {
+    "express": "3.3.4",
+    "jade": "*",
+    "less-middleware": "*"
   }
 }
