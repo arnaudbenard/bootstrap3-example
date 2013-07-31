@@ -14,8 +14,17 @@
   </div>
 </form>
 
+<hr>
+
 <% quotes.forEach( function ( quote ){ %>
-  	<%= quote.author%>
-    <a href="/edit/<%= quote._id %>"><%= quote.content %></a>
-    <a  href="/destroy/<%= quote._id %>">Delete</a>
+	<div class="quote-container">
+		<ul class="quote-container__list">
+			<li class="quote-container__list__content"><%= quote.content %></li>
+			<li>
+				<a href="/edit/<%= quote._id %>"><span class="glyphicon glyphicon-pencil"></span></a>
+    			<a href="/destroy/<%= quote._id %>"><span class="glyphicon glyphicon-remove"></span></a>
+			</li>
+		</ul>
+    	<p class="quote-container__author">by <%= quote.author%></p>
+	</div>
 <% }); %>
