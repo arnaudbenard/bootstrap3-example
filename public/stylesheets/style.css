@@ -16,9 +16,6 @@ ul {
   font-size: 27px;
   line-height: 92px;
 }
-.header__title span {
-  padding-top: 5px;
-}
 .navbar-black {
   background-color: black;
 }
