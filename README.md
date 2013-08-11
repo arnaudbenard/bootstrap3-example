@@ -2,5 +2,7 @@
 
 `npm install`
 
+`mongod`
+
 `node app`
 
